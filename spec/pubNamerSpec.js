@@ -12,12 +12,9 @@ describe('pubNamer', function(){
     expect(pubnamer.pluralize('stag')).toEqual('stags');
   });
 
-  xit('should generate two random nouns for the "The noun and noun" formula', function(){
-    expect(pubnamer.generate('nounandnoun')).toEqual('the duck and goose');
-  });
-
-  it('should return a random element of an array', function(){
-    expect(pubnamer.getRandomWord(nouns)).toEqual(jasmine.any(String));
+  it('should return a random word from nouns', function(){
+    var wordCheck = pubnamer.nouns.indexOf(pubnamer.getRandomWord(pubnamer.nouns))
+    expect(wordCheck > -1).toBeTruthy()
   });
 
 });
