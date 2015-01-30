@@ -1,0 +1,1 @@
+A pub name generator in Yavascript
