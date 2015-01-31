@@ -1,5 +1,4 @@
 describe('pubNamer', function(){
-
   var pubnamer;
 
   beforeEach(function(){
