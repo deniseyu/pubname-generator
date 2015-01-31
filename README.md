@@ -18,4 +18,6 @@ rackup
 * Javascript
 * jQuery
 * Jasmine
+* Ruby
+* Cuba
 * HTML5 / CSS3
