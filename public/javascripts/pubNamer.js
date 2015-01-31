@@ -1,7 +1,4 @@
-function pubNamer(){
-  this.getRandom = getRandomWord;
-  this.pluralize = pluralizeWord;
-}
+function pubNamer(){}
 
 pubNamer.prototype.generate = function(formula) {
   return formulasHash[formula];

@@ -2,29 +2,33 @@ describe('pubNamer', function(){
   var pubnamer;
 
   beforeEach(function(){
+    // spyOn(Math, 'random').and.returnValue(0.1);
     pubnamer = new pubNamer();
   });
 
-  it('should pluralize stag', function(){
-    spyOn(Math, 'random').and.returnValue(0.1);
-    expect(pubnamer.pluralize('stag')).toEqual('stags');
+    it('should random pick a formula to use', function(){
+    var randomFormula = getRandomWord(formulas);
+    expect(pubnamer.generate(randomFormula)).toEqual('The baker and Angular developer');
   });
 
-  it('should pluralize cross', function(){
-    spyOn(Math, 'random').and.returnValue(0.1);
-    expect(pubnamer.pluralize('cross')).toEqual('crosses');
+  it('pluralizes stag', function(){
+    expect(pluralizeWord('stag')).toEqual('stags');
   });
 
-  it('should pluralize goose', function(){
-    expect(pubnamer.pluralize('goose')).toEqual('geese');
+  it('pluralizes cross', function(){
+    expect(pluralizeWord('cross')).toEqual('crosses');
   });
 
-  it('should pluralize moose', function(){
-    expect(pubnamer.pluralize('moose')).toEqual('moose');
+  it('pluralizes goose', function(){
+    expect(pluralizeWord('goose')).toEqual('geese');
+  });
+
+  it('pluralizes moose', function(){
+    expect(pluralizeWord('moose')).toEqual('moose');
   })
 
-  it('should return a random element of an array', function(){
-    expect(pubnamer.getRandom(nouns)).toEqual('dog');
+  it('returns a random element of an array', function(){
+    expect(pubnamer.getRandom(nouns)).toEqual('Boot');
   });
 
   it('should generate a name of two nouns', function(){
@@ -87,9 +91,6 @@ describe('pubNamer', function(){
     expect(pubnamer.generate('cityPlace')).toEqual('Islington Tavern');
   })
 
-  it('should random pick a formula to use', function(){
-    var randomFormula = pubnamer.getRandom(formulas);
-    expect(pubnamer.generate(randomFormula)).toEqual('The baker and Angular developer');
-  });
+
 
 });
