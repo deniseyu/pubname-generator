@@ -7,10 +7,12 @@ describe('pubNamer', function(){
   });
 
   it('should pluralize stag', function(){
+    spyOn(Math, 'random').and.returnValue(0.1);
     expect(pubnamer.pluralize('stag')).toEqual('stags');
   });
 
   it('should pluralize cross', function(){
+    spyOn(Math, 'random').and.returnValue(0.1);
     expect(pubnamer.pluralize('cross')).toEqual('crosses');
   });
 
