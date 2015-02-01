@@ -1,18 +1,18 @@
 var pubNamer = (function(){
 
   return {
-    //these function are for Jasmine test purposes, but left in just because
+    //these function are for Jasmine test purposes, but left in for now
     isTrue: function() { return true; },
     random: function() { return Math.random(); },
     twiceRandom: function() { return Math.random() + Math.random(); },
-    innerRef: function() { return this.isTrue() }, 
+    innerRef: function() { return pubNamer.isTrue() }, 
 
     //real work starts here
     generate: function() {
-      var rawFormula = lists.formula()
-      var formula = rawFormula.split(" ")
+      var rawFormula = lists.formula();
+      var formula = rawFormula.split(" ");
       if(formula.length === 2) {
-        var names = []
+        var names = [];
         formula.forEach(function(formula) {
           names.push(lists.random(formula));
         });
@@ -23,28 +23,26 @@ var pubNamer = (function(){
         } else if(rawFormula === 'profession city') {
           return 'The ' + names[0] + ' of ' + names[1]; 
         } else if(rawFormula === 'number noun'
-                  || rawFormula === 'number profession'){
-          return 'The ' + names[0] + ' ' + this.pluralize(names[1]);
+            || rawFormula === 'number profession'){
+          return 'The ' + names[0] + ' ' + pluralize(names[1]);
         } else {
           return 'The ' + names[0] + ' ' + names[1];
         }
       } else {
-        var name = lists.random(formula[0])
+        var name = lists.random(formula[0]);
         return 'The ' + name;
       }
-    },
-    pluralize: function(word) {
-                 if(word[(word.length - 1)] === 's') {
-                  return word + 'es';
-                 } else if(word.slice(1) === 'oose') {
-                    if(word[0] === 'm') {
-                      return word;
-                    } else {
-                      return 'geese'
-                    }
-                 } else {
-                 return word + 's';
-                 }
-               }
+    }
   }
-  }())
+  //private
+
+  //function formulas(name) {
+    //var strings = {
+    //'profession profession':  
+    //'profession noun':
+    //'profession city':
+    //'number noun':
+    //'number profession':
+    //'noun noun':
+  //}
+}())

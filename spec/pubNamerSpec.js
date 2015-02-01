@@ -4,38 +4,21 @@ describe('Testing testing', function() {
     spyOn(Math, 'random').and.returnValue(0.1);
   });
 
-  //testing the module pattern && multi-spying, can and should be deleted
+  //testing the module pattern && multi-spying, can and will be deleted
   it('works', function() {
     expect(pubNamer.isTrue()).toBe(true);
   });
 
-  it('stubs out Math.rand', function() {
+  it('stubs Math.rand', function() {
     expect(pubNamer.random()).toEqual(0.1);
   });
 
-  it('stubs out Math.rand twice', function() {
+  it('stubs Math.rand twice', function() {
     expect(pubNamer.twiceRandom()).toEqual(0.2);
   });
 
   it('can call inner functions', function() {
     expect(pubNamer.innerRef()).toBe(true);
-  });
-});
-
-describe('lists', function() {
-
-  beforeEach(function() {
-    spyOn(Math, 'random').and.returnValue(0.1);
-  });
-
-  it('selects a random element of a given list', function() {
-    //in this case, Math.random being set to 0.1 always returns 6, so the 5th array
-    //element
-    expect(lists.random('noun')).toEqual('Boot');
-  });
-
-  it('provides a random naming formula', function() {
-    expect(lists.formula()).toEqual('city noun');
   });
 });
 
@@ -116,28 +99,4 @@ describe('pubNamer', function() {
     });
   });
 
-  describe('Pluralizing', function() {
-    
-    it('words with a standard plural', function() {
-      expect(pubNamer.pluralize('stag')).toEqual('stags');
-    });
-
-    describe('when a word already ends with s', function() {
-
-      it('cross', function() {
-        expect(pubNamer.pluralize('cross')).toEqual('crosses');
-      });
-    });
-
-    describe('when a word has a non-standard plural', function() {
-
-      it('goose', function() {
-        expect(pubNamer.pluralize('goose')).toEqual('geese');
-      });
-
-      it('moose', function() {
-        expect(pubNamer.pluralize('moose')).toEqual('moose');
-      });
-    });
-  });
 });
