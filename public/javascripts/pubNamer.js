@@ -5,20 +5,26 @@ var pubNamer = (function(){
     isTrue: function() { return true; },
     random: function() { return Math.random(); },
     twiceRandom: function() { return Math.random() + Math.random(); },
-    
+    innerRef: function() { return this.isTrue() }, 
+
     //real work starts here
-    generate: function(){
+    generate: function() {
       var rawFormula = lists.formula()
       var formula = rawFormula.split(" ")
-      if(formula.length === 2){
+      if(formula.length === 2) {
         var names = []
-        formula.forEach(function(formula){
+        formula.forEach(function(formula) {
           names.push(lists.random(formula));
         });
         if(rawFormula === 'profession profession'
           || rawFormula === 'profession noun'
           || rawFormula === 'noun noun'){
           return 'The ' + names[0] + ' and ' + names[1];
+        } else if(rawFormula === 'profession city') {
+          return 'The ' + names[0] + ' of ' + names[1]; 
+        } else if(rawFormula === 'number noun'
+                  || rawFormula === 'number profession'){
+          return 'The ' + names[0] + ' ' + this.pluralize(names[1]);
         } else {
           return 'The ' + names[0] + ' ' + names[1];
         }
@@ -26,25 +32,19 @@ var pubNamer = (function(){
         var name = lists.random(formula[0])
         return 'The ' + name;
       }
-    }
+    },
+    pluralize: function(word) {
+                 if(word[(word.length - 1)] === 's') {
+                  return word + 'es';
+                 } else if(word.slice(1) === 'oose') {
+                    if(word[0] === 'm') {
+                      return word;
+                    } else {
+                      return 'geese'
+                    }
+                 } else {
+                 return word + 's';
+                 }
+               }
   }
   }())
-
-//TODO
-//var pluralizeWord = function(string) {
-  //if (string === 'moose') {
-    //return 'moose';
-  //} else if (string === 'goose') {
-    //return 'geese';
-  //} else if (string.split("")[string.length-1] === 's'){
-    //return string + 'es';
-  //} else {
-    //return string + 's';
-  //}
-//};
-
-//var formulasHash = {
-  //'numberNoun' : 'The ' + getRandomWord(numbers) + ' ' + pluralizeWord(getRandomWord(nouns)),
-  //'numberProfession' : 'The ' + getRandomWord(numbers) + ' ' + pluralizeWord(getRandomWord(professions)),
-  //'professionCity' : 'The ' + getRandomWord(professions) + ' of ' + getRandomWord(cities),
-//};

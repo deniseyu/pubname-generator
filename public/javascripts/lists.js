@@ -20,8 +20,7 @@ var lists = (function(){
               return data[list][index];
             },
     formula: function() {
-              var index = Math.floor(Math.random() * data.formula.length);
-              return data.formula[index];
+              return this.random('formula');
              }
   }
 }());
