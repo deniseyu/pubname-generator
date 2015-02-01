@@ -1,39 +1,50 @@
-function pubNamer(){}
+var pubNamer = (function(){
 
-pubNamer.prototype.generate = function(formula) {
-  return formulasHash[formula];
-}
-
-var getRandomWord = function(array) {
-  return array[Math.floor(Math.random() * array.length)]
-};
-
-var pluralizeWord = function(string) {
-  if (string === 'moose') {
-    return 'moose';
-  } else if (string === 'goose') {
-    return 'geese';
-  } else if (string.split("")[string.length-1] === 's'){
-    return string + 'es';
-  } else {
-    return string + 's';
+  return {
+    //these function are for Jasmine test purposes, but left in just because
+    isTrue: function() { return true; },
+    random: function() { return Math.random(); },
+    twiceRandom: function() { return Math.random() + Math.random(); },
+    
+    //real work starts here
+    generate: function(){
+      var rawFormula = lists.formula()
+      var formula = rawFormula.split(" ")
+      if(formula.length === 2){
+        var names = []
+        formula.forEach(function(formula){
+          names.push(lists.random(formula));
+        });
+        if(rawFormula === 'profession profession'
+          || rawFormula === 'profession noun'
+          || rawFormula === 'noun noun'){
+          return 'The ' + names[0] + ' and ' + names[1];
+        } else {
+          return 'The ' + names[0] + ' ' + names[1];
+        }
+      } else {
+        var name = lists.random(formula[0])
+        return 'The ' + name;
+      }
+    }
   }
-};
+  }())
 
-var formulasHash = {
-  'nounNoun' : 'The ' + getRandomWord(nouns) + ' and ' + getRandomWord(nouns),
-  'professionProfession' : 'The ' + getRandomWord(professions) + ' and ' + getRandomWord(professions),
-  'describerFamousPerson' : 'The ' + getRandomWord(describers) + ' ' +getRandomWord(famousPeople),
-  'describerPlace' : 'The ' + getRandomWord(describers) + ' ' + getRandomWord(places),
-  'numberNoun' : 'The ' + getRandomWord(numbers) + ' ' + pluralizeWord(getRandomWord(nouns)),
-  'numberProfession' : 'The ' + getRandomWord(numbers) + ' ' + pluralizeWord(getRandomWord(professions)),
-  'noun' : 'The ' + getRandomWord(nouns),
-  'cityNoun' : 'The ' + getRandomWord(cities) + ' ' + getRandomWord(nouns),
-  'famousPerson' : 'The ' + getRandomWord(famousPeople),
-  'place' : 'The ' + getRandomWord(places),
-  'city' : 'The ' + getRandomWord(cities),
-  'cityPlace' : getRandomWord(cities) + ' ' + getRandomWord(places),
-  'profession' : 'The ' + getRandomWord(professions),
-  'professionCity' : 'The ' + getRandomWord(professions) + ' of ' + getRandomWord(cities),
-  'professionNoun' : 'The ' + getRandomWord(professions) + ' and ' + getRandomWord(nouns)
-};
+//TODO
+//var pluralizeWord = function(string) {
+  //if (string === 'moose') {
+    //return 'moose';
+  //} else if (string === 'goose') {
+    //return 'geese';
+  //} else if (string.split("")[string.length-1] === 's'){
+    //return string + 'es';
+  //} else {
+    //return string + 's';
+  //}
+//};
+
+//var formulasHash = {
+  //'numberNoun' : 'The ' + getRandomWord(numbers) + ' ' + pluralizeWord(getRandomWord(nouns)),
+  //'numberProfession' : 'The ' + getRandomWord(numbers) + ' ' + pluralizeWord(getRandomWord(professions)),
+  //'professionCity' : 'The ' + getRandomWord(professions) + ' of ' + getRandomWord(cities),
+//};
