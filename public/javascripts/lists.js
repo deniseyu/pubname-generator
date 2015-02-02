@@ -4,14 +4,14 @@ var lists = (function(){
   //pattern through an IIFE
 
   var data = {
-    noun: ["Angel", "Apple", "Ball", "Bayonet", "Beet", "Bell", "Boot", "Bottle", "Bull", "Candle", "Cane", "Cat", "Cheese", "Chip", "Coat", "Cock", "Cricket", "Cross", "Cup", "Dog", "Dolphin", "Donkey", "Door", "Duck", "Eagle", "Feather", "Fella", "Fiddle", "Fife", "Flag", "Flute", "Frog", "Goat", "Goblet", "Goose", "Grape", "Gun", "Hare", "Harp", "Hart", "Hat", "Hawk", "Hen", "Horse", "Hound", "Key", "Lamp", "Lyre", "Mill", "Mirror", "Moon", "Moose", "Pen", "Quill", "Rabbit", "Ram", "Rooster", "Sardine", "Shield", "Staff", "Stag", "Stallion", "Sun", "Swan", "Sword"],
-    famousPerson: ["Charles", "Churchill", "David", "Edward", "Elizabeth", "George", "Harry Potter", "Henry", "Hodor", "James", "Jon Snow", "Kate", "Leo", "Mary", "Philip", "Rylan", "Shakespeare", "Sherlock", "Snozza", "William"],
-    profession: ["Alchemist", "Baker", "Banker", "Barber", "Barista", "Barrister", "Barrowboy", "Beggar", "Blacksmith", "Brewer", "Butcher", "Candlemaker", "Doctor", "Duchess", "Duke", "Farmer", "Fiddler", "Fisherman", "Foreman", "Gardener", "Hatmaker", "Hunter", "Innkeep", "Jester", "Jockey", "King", "Locksmith", "Millner", "Minister", "Pharmacist", "Physician", "Plowman", "Plumber", "Postman", "Prince", "Princess", "Queen", "Schoolteacher", "Shoemaker", "Solicitor", "Tailor", "Toffeemaker", "Veterinarian", "Warden", "Writer"], 
-    number: ["Eight", "Eleven", "Fifteen", "Five", "Four", "Nine", "Seven", "Six", "Ten", "Thirteen", "Three", "Twelve"],
-    describer: ["Bent", "Black", "Crooked", "Dancing", "Famous", "Fighting", "Golden", "Green", "Jolly", "Laughing", "Metal", "Old", "Red", "Rusty", "Singing", "Silver", "White", "Wooden", "Yellow", "Young"],
-    place: ["Canyon", "Castle", "Close", "Common", "Farm", "Gate", "Hall", "Heaven", "Hill", "Mountain", "Palace", "Path", "Port", "Room", "Square", "Stable", "Tavern", "Valley", "Wharf", "Yard"],
-    city: ["Bath", "Bristol", "Brixton", "Chelsea", "Cockfosters", "Cumbria", "Dublin", "Edinburgh", "Essex", "Exmouth", "Hackney", "Islington", "Kensington", "Lancaster", "London", "Manchester", "Newcastle", "Norfolk", "Plymouth", "Portsmouth", "Shoreditch", "Soho", "Surrey", "Sussex", "Tottenham", "Wales", "Westminster", "Yorkshire"],
-    formula: ["city", "city noun", "city place", "describer place", "famousPerson", "noun", "noun noun", "number noun", "number profession", "place", "profession", "profession city", "profession noun", "profession profession"]
+    noun: ["Anchor", "Angel", "Apple", "Arrow", "Ball", "Bayonet", "Bear", "Bell", "Bicycle", "Boar", "Boot", "Bottle", "Bow", "Brick", "Bull", "Candle", "Cane", "Cat", "Chandelier", "Cheese", "Chip", "Clock", "Cock", "Cricket", "Cross", "Crow", "Cup", "Dog", "Dolphin", "Donkey", "Door", "Dragon", "Duck", "Eagle", "Feather", "Fella", "Fiddle", "Fife", "Flag", "Flute", "Frog", "Gauntlet", "Goat", "Goblet", "Goose", "Grape", "Gun", "Hare", "Harp", "Hart", "Hat", "Hawk", "Hen", "Horse", "Hound", "Key", "Lamb", "Lamp", "Lance", "Lyre", "Mill", "Mirror", "Moon", "Moose", "Nightingale", "Pen", "Plow", "Quill", "Rabbit", "Ram", "Raven", "Rooster", "Sardine", "Sceptre", "Scroll", "Shield", "Ship", "Staff", "Stag", "Stallion", "Star", "Stone", "Sun", "Swan", "Sword", "Violin", "Wagon"],
+    famousPerson: ["Charles", "Chaucer", "Churchill", "David", "Diana", "Dickens", "Dumbledore", "Edward", "Elizabeth", "Faulkner", "George", "Grace", "Harry Potter", "Henry", "Hodor", "James", "Jane Austen", "Jon Snow", "Kate", "Leo", "Louise", "Mary", "Misifu", "Nelson", "Newton", "Philip", "Rylan", "Shakespeare", "Sherlock", "Snozza", "Twain", "Tywin", "Victoria", "William"],
+    profession: ["Alchemist", "Archer", "Baker", "Banker", "Barber", "Barista", "Barrister", "Barrowboy", "Basketmaker", "Beggar", "Blacksmith", "Brewer", "Butcher", "Butler", "Candlemaker", "Captain", "Cooper", "Dame", "Doctor", "Duchess", "Duke", "Emperor", "Empress", "Factorygirl", "Farmer", "Fiddler", "Foreman", "Gardener", "Geezer", "Hatmaker", "Hunter", "Innkeep", "Jester", "Jockey", "Judge", "King", "Knight", "Lady", "Locksmith", "Lord", "Maiden", "Mermaid", "Millner", "Minister", "Pharmacist", "Physician", "Playwright", "Plowman", "Plumber", "Poet", "Postman", "Prince", "Princess", "Puppeteer", "Queen", "Sailor", "Schoolteacher", "Shoemaker", "Solicitor", "Tailor", "Toffeemaker", "Veterinarian", "Warden", "Writer"],
+    number: ["Eight", "Eleven", "Fifteen", "Five", "Four", "Fourteen", "Nine", "Seven", "Six", "Ten", "Thirteen", "Three", "Twelve"],
+    describer: ["Bent", "Black", "Cockney", "Copper", "Crooked", "Dancing", "English", "Famous", "Fighting", "Free", "Golden", "Green", "Jolly", "Laughing", "Metal", "Old", "Prancing", "Red", "Ruby", "Rusty", "Scottish", "Singing", "Sleepy", "Silver", "White", "Wild", "Wooden", "Yellow", "Young"],
+    place: ["Abbey", "Arms", "Bridge", "Brook", "Canyon", "Castle", "Close", "Common", "Corner", "Cove", "Eves", "Farm", "Field", "Gate", "Garden", "Green", "Hall", "Hearth", "Haven", "Hollow", "House", "Market", "Hill", "Hotel", "Inn", "Island", "Mountain", "Oaks", "Palace", "Path", "Port", "River", "Room", "Spring", "Square", "Stable", "Tavern", "Theatre", "Valley", "Village", "Wharf", "Woods", "Yard"],
+    city: ["Bath", "Bermondsey", "Bristol", "Brixton", "Cambridge", "Camden", "Canterbury", "Cardiff", "Chelsea", "Clapham", "Cockfosters", "Coventry", "Cumbria", "Dublin", "Edinburgh", "Essex", "Exmouth", "Glasgow", "Gloucester", "Hackney", "Islington", "Kensington", "Lancaster", "Leeds", "Liverpool", "London", "Manchester", "Mayfair", "Newcastle", "Norfolk", "Nottingham", "Oxford", "Plymouth", "Portsmouth", "Shoreditch", "Soho", "Surrey", "Sussex", "Tottenham", "Wales", "Wellington", "Wenlock", "Westminster", "Winchester", "Yorkshire"],
+    formula: ["city", "city noun", "city place", "describer place", "describer profession", "famousPerson", "noun", "noun noun", "number noun", "number profession", "place", "profession", "profession city", "profession noun", "profession profession"]
   }
 
   return {
@@ -20,8 +20,7 @@ var lists = (function(){
               return data[list][index];
             },
     formula: function() {
-               return lists.random('formula');
+              return lists.random('formula');
              }
   }
-
 }());
