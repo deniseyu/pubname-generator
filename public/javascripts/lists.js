@@ -23,4 +23,5 @@ var lists = (function(){
                return lists.random('formula');
              }
   }
+
 }());

@@ -1,9 +1,6 @@
 describe('Formula', function() {
 
-  describe('', function() {
-    //beforeEach(function() {
-      //var pubWords = ['Lamp', 'Lamp'];
-    //});
+  describe('Finding formulas', function() {
 
     it('composes a pub name when given a formula', function() {
       var pubWords = ['Lamp', 'Lamp']

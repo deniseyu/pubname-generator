@@ -16,4 +16,4 @@ var pubNamer = (function(){
       return formula.makeName(rawFormula, pubWords);
     }
   }
-}())
+}());
