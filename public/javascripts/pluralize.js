@@ -2,9 +2,9 @@ var pluralize = (function() {
 
   return function(word) {
     if(endsInOose(word)) {
-        return isMoose(word) 
+        return isMoose(word)
                  ? word
-                 : 'geese';
+                 : 'Geese';
       } else {
         return isAlreadyPlural(word)
                  ? word + 'es'

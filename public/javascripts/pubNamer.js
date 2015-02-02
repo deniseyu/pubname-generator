@@ -5,7 +5,7 @@ var pubNamer = (function(){
     isTrue: function() { return true; },
     random: function() { return Math.random(); },
     twiceRandom: function() { return Math.random() + Math.random(); },
-    innerRef: function() { return pubNamer.isTrue() }, 
+    innerRef: function() { return pubNamer.isTrue() },
 
     //real work starts here
     generate: function() {
@@ -21,7 +21,7 @@ var pubNamer = (function(){
           || rawFormula === 'noun noun'){
           return 'The ' + names[0] + ' and ' + names[1];
         } else if(rawFormula === 'profession city') {
-          return 'The ' + names[0] + ' of ' + names[1]; 
+          return 'The ' + names[0] + ' of ' + names[1];
         } else if(rawFormula === 'number noun'
             || rawFormula === 'number profession'){
           return 'The ' + names[0] + ' ' + pluralize(names[1]);
@@ -38,7 +38,7 @@ var pubNamer = (function(){
 
   //function formulas(name) {
     //var strings = {
-    //'profession profession':  
+    //'profession profession':
     //'profession noun':
     //'profession city':
     //'number noun':
