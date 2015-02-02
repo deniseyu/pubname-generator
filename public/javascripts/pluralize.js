@@ -4,7 +4,7 @@ var pluralize = (function() {
     if(endsInOose(word)) {
         return isMoose(word) 
                  ? word
-                 : 'geese';
+                 : 'Geese';
       } else {
         return isAlreadyPlural(word)
                  ? word + 'es'
@@ -20,7 +20,7 @@ var pluralize = (function() {
     return word.slice(1) === 'oose'
   };
   function isMoose(word) {
-    return word[0] === 'm'
+    return word[0] === 'M'
   };
 
 }());
