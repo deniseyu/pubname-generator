@@ -5,7 +5,7 @@ var pubNamer = (function(){
     isTrue: function() { return true; },
     random: function() { return Math.random(); },
     twiceRandom: function() { return Math.random() + Math.random(); },
-    innerRef: function() { return pubNamer.isTrue() }, 
+    innerRef: function() { return pubNamer.isTrue() },
 
     //real work starts here
     generate: function() {
