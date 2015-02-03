@@ -9,9 +9,5 @@ describe('Lists', function() {
     //element
     expect(lists.random('noun')).toEqual('Boot');
   });
-
-  it('provides a random naming formula', function() {
-    expect(lists.formula()).toEqual('city noun');
-  });
 });
 

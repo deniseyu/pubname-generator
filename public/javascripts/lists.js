@@ -16,12 +16,9 @@ var lists = (function(){
 
   return {
     random: function(list) {
-              var index = Math.floor(Math.random() * data[list].length);
-              return data[list][index];
-            },
-    formula: function() {
-               return lists.random('formula');
-             }
+              var index = Math.floor(Math.random() * pubWords[list].length);
+              return pubWords[list][index];
+            }
   }
 
 }());
