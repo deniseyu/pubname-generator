@@ -1,5 +1,5 @@
 var formula = (function() {
-  var pubResult = {
+  var formulas = {
     'profession profession': theOneAndTwo,
     'profession noun': theOneAndTwo,
     'profession city': theOneOfTwo,
