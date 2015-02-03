@@ -20,7 +20,7 @@ var pluralize = (function() {
     return word.slice(1) === 'oose'
   };
   function isMoose(word) {
-    return word[0] === 'm'
+    return word[0] === 'M'
   };
 
 }());
