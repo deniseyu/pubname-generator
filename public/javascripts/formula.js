@@ -1,5 +1,5 @@
 var formula = (function() {
-  var pubResult = {
+  var formulas = {
     'profession profession': theOneAndTwo,
     'profession noun': theOneAndTwo,
     'profession city': theOneOfTwo,
@@ -30,7 +30,12 @@ var formula = (function() {
   };
   return {
     makeName: function(formula, pubWords) {
-                return (pubResult[formula] || pubResult['simple'])(pubWords) 
-              }
+                return (formulas[formula] || formulas['simple'])(pubWords) 
+              },
+    random: function() {
+              var keys = Object.keys(formulas)
+              var index = Math.floor(Math.random() * keys.length);
+              return keys[index];
+            }
   }
 }())
