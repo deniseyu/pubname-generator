@@ -10,8 +10,11 @@ var formula = (function() {
     'describer famousPerson': theOneTwo,
     'city noun': theOneTwo,
     'city place': theOneTwo,
-    'city name': theOneTwo,
-    'simple' : theOne
+    'city noun': theOneTwo,
+    'city': theOne,
+    'noun': theOne,
+    'place': theOne,
+    'profession': theOne
   }
   function theOneAndTwo(pubWords) {
     return 'The ' + pubWords[0] + ' and ' + pubWords[1];
@@ -30,7 +33,7 @@ var formula = (function() {
   };
   return {
     makeName: function(formula, pubWords) {
-                return (formulas[formula] || formulas['simple'])(pubWords) 
+                return formulas[formula](pubWords) 
               },
     random: function() {
               var keys = Object.keys(formulas)
